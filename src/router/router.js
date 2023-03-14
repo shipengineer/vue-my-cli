@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "",
+    meta: { layout: "main" },
+    component: () => import("../views/HomeView.vue"),
   },
   {
     path: "/login",
@@ -22,37 +22,37 @@ const routes = [
   {
     path: "/detailRecord",
     name: "detailRecord",
-    meta: { layout: "detail" },
+    meta: { layout: "main" },
     component: () => import("../views/DetailRecord.vue"),
   },
   {
     path: "/history",
     name: "history",
-    meta: { layout: "history" },
+    meta: { layout: "main" },
     component: () => import("../views/History.vue"),
   },
   {
     path: "/planing",
     name: "planing",
-    meta: { layout: "planing" },
+    meta: { layout: "main" },
     component: () => import("../views/Planing.vue"),
   },
   {
     path: "/profile",
     name: "profile",
-    meta: { layout: "profile" },
+    meta: { layout: "main" },
     component: () => import("../views/Profile.vue"),
   },
   {
     path: "/record",
     name: "record",
-    meta: { layout: "record" },
+    meta: { layout: "main" },
     component: () => import("../views/Record.vue"),
   },
   {
     path: "/register",
     name: "register",
-    meta: { layout: "register" },
+    meta: { layout: "empty" },
     component: () => import("../views/Register.vue"),
   },
 ];
